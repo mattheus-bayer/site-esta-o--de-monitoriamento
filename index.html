@@ -1,83 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
- 
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
- 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estação de Monitoramento Ambiental</title>
- 
+
+    <!-- Google Fonts para estilo tecnológico -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+
     <!-- Conecta o HTML ao CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
- 
+
 <body>
- 
+
     <header>
-        <h1>🌎 Estação de Monitoramento Ambiental</h1>
-        <p>Monitoramento ambiental em tempo real</p>
+        <div class="logo-container">
+            <span class="status-dot"></span>
+            <h1>ESTAÇÃO DE MONITORAMENTO AMBIENTAL</h1>
+        </div>
+        <p>Painel de Controle de Robótica em Tempo Real</p>
     </header>
- 
+
     <main>
- 
+
         <section class="painel">
- 
-            <div class="card">
-                <h2>🌡️ Temperatura</h2>
+
+            <div class="card card-temp">
+                <div class="card-header">
+                    <h2>🌡️ Temperatura</h2>
+                    <span class="card-tag">SENSOR 01</span>
+                </div>
                 <p id="temperatura" class="valor">-- °C</p>
+                <div class="card-bar"><div class="fill fill-temp"></div></div>
             </div>
- 
-            <div class="card">
-                <h2>💧 Umidade do Ar</h2>
+
+            <div class="card card-umid">
+                <div class="card-header">
+                    <h2>💧 Umidade do Ar</h2>
+                    <span class="card-tag">SENSOR 02</span>
+                </div>
                 <p id="umidade" class="valor">-- %</p>
+                <div class="card-bar"><div class="fill fill-umid"></div></div>
             </div>
- 
-            <div class="card">
-                <h2>☀️ Luminosidade</h2>
+
+            <div class="card card-lumi">
+                <div class="card-header">
+                    <h2>☀️ Luminosidade</h2>
+                    <span class="card-tag">SENSOR 03</span>
+                </div>
                 <p id="luminosidade" class="valor">-- %</p>
+                <div class="card-bar"><div class="fill fill-lumi"></div></div>
             </div>
- 
+
         </section>
- 
+
         <section class="status">
-            <h2>Situação do Ambiente</h2>
-            <p id="situacao">Aguardando dados...</p>
+            <h2>SITUAÇÃO DO AMBIENTE</h2>
+            <p id="situacao">Aguardando leitura...</p>
         </section>
- 
+
         <section class="atualizacao">
-            <p>
-                Última atualização:
-                <span id="horario">--:--</span>
-            </p>
- 
-            <button onclick="atualizarDados()">
-                Atualizar dados
+            <p>ÚLTIMA ATUALIZAÇÃO: <span id="horario">--:--</span></p>
+
+            <button id="btnAtualizar" onclick="atualizarDados()">
+                <span class="btn-text">ATUALIZAR DADOS</span>
             </button>
         </section>
- 
+
         <section class="sobre">
-            <h2>Sobre o projeto</h2>
- 
+            <h2>SOBRE O PROJETO</h2>
             <p>
                 Este projeto utiliza robótica, programação e sensores
-                para realizar o monitoramento das condições ambientais.
+                para realizar o monitoramento constante das condições ambientais.
             </p>
- 
             <p>
-                O sistema será capaz de coletar dados de temperatura,
-                umidade do ar e luminosidade.
+                O sistema coleta dados de temperatura, umidade do ar e luminosidade,
+                comunicação em tempo real entre hardware e interface web.
             </p>
         </section>
- 
+
     </main>
- 
+
     <footer>
-        <p>Projeto de Robótica — 3º Ano do Ensino Médio</p>
+        <p>PROJETO DE ROBÓTICA — 3º ANO DO ENSINO MÉDIO</p>
     </footer>
- 
+
     <!-- Conecta o HTML ao JavaScript -->
     <script src="script.js"></script>
- 
+
 </body>
 </html>

@@ -1,149 +1,288 @@
-/* CONFIGURAÇÃO GERAL */
- 
+/* RESET E VARIÁVEIS DE COR */
+:root {
+    --bg-main: #0a0c10;
+    --bg-card: #12161f;
+    --bg-card-hover: #181e2a;
+    --red-primary: #ff2a4b;
+    --red-glow: rgba(255, 42, 75, 0.4);
+    --red-dark: #b3001e;
+    --text-primary: #f0f4f8;
+    --text-secondary: #8b9bb4;
+    --border-color: rgba(255, 42, 75, 0.2);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
- 
-/* CORPO DA PÁGINA */
- 
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f4f8;
-    color: #333;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
     text-align: center;
+    min-height: 100vh;
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(255, 42, 75, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 10% 90%, rgba(255, 42, 75, 0.05) 0%, transparent 40%);
 }
- 
-/* CABEÇALHO */
- 
+
+/* CABEÇALHO FUTURISTA */
 header {
-    background-color: #1565c0;
-    color: white;
-    padding: 30px 20px;
+    background: rgba(18, 22, 31, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 35px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
- 
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+/* Ponto pulsante de gravação/live */
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--red-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--red-primary);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 42, 75, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 42, 75, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 42, 75, 0); }
+}
+
 header h1 {
-    margin-bottom: 10px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    color: var(--text-primary);
+    text-shadow: 0 0 10px var(--red-glow);
 }
- 
+
+header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
 /* CONTEÚDO PRINCIPAL */
- 
 main {
     max-width: 1100px;
     margin: auto;
-    padding: 30px 20px;
+    padding: 40px 20px;
 }
- 
-/* PAINEL DOS SENSORES */
- 
+
+/* PAINEL DOS CARDS */
 .painel {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
- 
-/* CARDS */
- 
+
+/* CARDS INTERATIVOS E NEON */
 .card {
-    background-color: white;
-    width: 280px;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-card);
+    width: 300px;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+    text-align: left;
 }
- 
-.card h2 {
+
+/* Efeito Hover nos Cards */
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    background-color: var(--bg-card-hover);
+    border-color: var(--red-primary);
+    box-shadow: 0 15px 35px var(--red-glow), 0 0 15px rgba(255, 42, 75, 0.2);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
 }
- 
+
+.card h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.card-tag {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.65rem;
+    background: rgba(255, 42, 75, 0.15);
+    color: var(--red-primary);
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
 /* VALORES DOS SENSORES */
- 
 .valor {
-    font-size: 35px;
-    font-weight: bold;
-    color: #1565c0;
-}
- 
-/* SITUAÇÃO */
- 
-.status {
-    background-color: white;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
- 
-#situacao {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 15px;
-}
- 
-/* ÁREA DE ATUALIZAÇÃO */
- 
-.atualizacao {
-    margin: 30px 0;
-}
- 
-.atualizacao p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
     margin-bottom: 15px;
+    text-shadow: 0 0 12px var(--red-glow);
 }
- 
-/* BOTÃO */
- 
-button {
-    background-color: #1565c0;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
+
+/* BARRA DE PROGRESSO DECORATIVA */
+.card-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    overflow: hidden;
 }
- 
-button:hover {
-    background-color: #0d47a1;
+
+.fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--red-dark), var(--red-primary));
+    width: 60%;
+    border-radius: 2px;
+    box-shadow: 0 0 8px var(--red-primary);
 }
- 
-/* SOBRE O PROJETO */
- 
-.sobre {
-    background-color: white;
-    max-width: 800px;
+
+/* PAINEL DE SITUAÇÃO */
+.status {
+    background-color: var(--bg-card);
+    max-width: 650px;
     margin: 30px auto;
     padding: 25px;
-    border-radius: 12px;
-    line-height: 1.6;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
- 
+
+.status h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+#situacao {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* ÁREA DE ATUALIZAÇÃO */
+.atualizacao {
+    margin: 40px 0;
+}
+
+.atualizacao p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+#horario {
+    color: var(--red-primary);
+    font-weight: 600;
+}
+
+/* BOTÃO INTERATIVO GLOW */
+button {
+    background: linear-gradient(135deg, #ff2a4b, #b3001e);
+    color: white;
+    border: none;
+    padding: 16px 36px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px var(--red-glow);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 42, 75, 0.6);
+    background: linear-gradient(135deg, #ff415f, #d60024);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* SOBRE O PROJETO */
+.sobre {
+    background-color: var(--bg-card);
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+    line-height: 1.7;
+}
+
 .sobre h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    color: var(--red-primary);
     margin-bottom: 15px;
 }
- 
-/* RODAPÉ */
- 
-footer {
-    background-color: #263238;
-    color: white;
-    padding: 20px;
-    margin-top: 30px;
+
+.sobre p {
+    color: var(--text-secondary);
+    margin-bottom: 12px;
 }
- 
+
+/* RODAPÉ */
+footer {
+    background-color: #06070a;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+    padding: 25px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
 /* RESPONSIVIDADE */
- 
-@media (max-width: 700px) {
- 
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+
     .painel {
         flex-direction: column;
         align-items: center;
     }
- 
+
     .card {
         width: 100%;
+        max-width: 350px;
     }
 }
