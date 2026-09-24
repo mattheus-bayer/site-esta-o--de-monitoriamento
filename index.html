@@ -75,7 +75,7 @@
             </button>
         </section>
 
-        <!-- NOVA SEÇÃO: IMPACTO DO EL NIÑO -->
+        <!-- SEÇÃO: IMPACTO DO EL NIÑO (MAPA TECNOLÓGICO SVG NATIVO) -->
         <section class="elnino-section">
             <div class="elnino-header">
                 <h2>🌍 Fenômeno El Niño & Impactos Climáticos</h2>
@@ -85,22 +85,46 @@
             <div class="elnino-content">
                 <div class="elnino-text">
                     <p>
-                        O <strong>El Niño</strong> é um fenômeno climático caracterizado pelo aquecimento anormal das águas do Oceano Pacífico Equatorial. 
-                        Ele altera drasticamente os padrões de chuva e temperatura em todo o planeta.
+                        O <strong>El Niño</strong> é um fenômeno climático caracterizado pelo aquecimento anormal das águas do Oceano Pacífico Equatorial. Ele altera drasticamente os padrões de chuva e temperatura em todo o planeta.
                     </p>
-                    <p>
+                    <p style="margin-top: 15px;">
                         <strong>Principais Impactos no Brasil:</strong>
                     </p>
-                    <ul>
-                        <li>🔥 <strong>Norte e Nordeste:</strong> Sequeiras severas e temperaturas elevadas.</li>
-                        <li>⛈️ <strong>Sul:</strong> Aumento significativo das chuvas e risco de enchentes.</li>
-                        <li>🌡️ <strong>Centro-Oeste e Sudeste:</strong> Ondas de calor intenso e irregularidade de chuvas.</li>
+                    <ul class="elnino-lista">
+                        <li class="item-seca">🔥 <strong>Norte e Nordeste:</strong> Secas severas e temperaturas elevadas.</li>
+                        <li class="item-chuva">⛈️ <strong>Região Sul:</strong> Aumento das chuvas e risco de enchentes.</li>
+                        <li class="item-calor">🌡️ <strong>Centro-Oeste e Sudeste:</strong> Ondas de calor intenso.</li>
                     </ul>
                 </div>
                 
                 <div class="elnino-mapa">
-                    <img src="http://googleusercontent.com/image_collection/image_retrieval/13457424964928609679" alt="Mapa do El Niño e impacto das temperaturas na América do Sul">
-                    <span class="mapa-caption">Regiões mais afetadas pelas anomalias do El Niño</span>
+                    <!-- MAPA VETORIAL NATIVO (100% CÓDIGO - NUNCA QUEBRA) -->
+                    <div class="svg-map-container">
+                        <svg viewBox="0 0 300 380" class="tech-map-svg">
+                            <!-- Silhueta da América do Sul -->
+                            <path class="land-mass" d="M 100,20 Q 180,10 240,60 Q 280,120 220,200 Q 180,260 140,350 Q 120,370 100,340 Q 90,260 70,180 Q 50,100 80,40 Z" />
+
+                            <!-- Linha do Equador -->
+                            <path class="equator-line" d="M 10,70 L 290,70" />
+                            <text x="15" y="62" class="svg-label-sub">EQUADOR / PACÍFICO</text>
+
+                            <!-- Ponto 1: Norte/Nordeste -->
+                            <circle cx="160" cy="100" r="32" class="zone-glow zone-dry" />
+                            <circle cx="160" cy="100" r="6" class="zone-dot dot-dry" />
+                            <text x="165" y="105" class="svg-label">SECA / CALOR</text>
+
+                            <!-- Ponto 2: Centro-Oeste/Sudeste -->
+                            <circle cx="150" cy="180" r="28" class="zone-glow zone-heat" />
+                            <circle cx="150" cy="180" r="5" class="zone-dot dot-heat" />
+                            <text x="155" y="185" class="svg-label">CALOR EXTREMO</text>
+
+                            <!-- Ponto 3: Sul -->
+                            <circle cx="130" cy="260" r="26" class="zone-glow zone-rain" />
+                            <circle cx="130" cy="260" r="6" class="zone-dot dot-rain" />
+                            <text x="135" y="265" class="svg-label">CHUVAS INTENSAS</text>
+                        </svg>
+                    </div>
+                    <span class="mapa-caption">Mapeamento de Zonas de Risco Climático</span>
                 </div>
             </div>
         </section>

@@ -17,7 +17,7 @@ function atualizarDados() {
     document.getElementById("umidade").innerText = umidade + " %";
     document.getElementById("luminosidade").innerText = luminosidade + " %";
 
-    // ATUALIZAR BARRAS VISUAIS DE DADOS
+    // ATUALIZAR BARRAS VISUAIS DE DADOS (Preenchimento dinâmico)
     document.querySelector(".fill-temp").style.width = ((temperatura / 40) * 100) + "%";
     document.querySelector(".fill-umid").style.width = umidade + "%";
     document.querySelector(".fill-lumi").style.width = luminosidade + "%";
