@@ -17,7 +17,7 @@ function atualizarDados() {
     document.getElementById("umidade").innerText = umidade + " %";
     document.getElementById("luminosidade").innerText = luminosidade + " %";
 
-    // ATUALIZAR BARRAS VISUAIS DE DADOS (Efeito dinâmico)
+    // ATUALIZAR BARRAS VISUAIS DE DADOS
     document.querySelector(".fill-temp").style.width = ((temperatura / 40) * 100) + "%";
     document.querySelector(".fill-umid").style.width = umidade + "%";
     document.querySelector(".fill-lumi").style.width = luminosidade + "%";
@@ -30,7 +30,7 @@ function atualizarDados() {
     } else if (temperatura < 30) {
         situacao = "🟡 Atenção - Temperatura Moderada";
     } else {
-        situacao = "🔴 Alerta - Temperatura Elevada";
+        situacao = "🔴 Alerta - Temperatura Elevada (Influência El Niño)";
     }
 
     document.getElementById("situacao").innerText = situacao;

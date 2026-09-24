@@ -17,16 +17,19 @@
 
 <body>
 
+    <div class="overlay-bg"></div>
+
     <header>
         <div class="logo-container">
             <span class="status-dot"></span>
             <h1>ESTAÇÃO DE MONITORAMENTO AMBIENTAL</h1>
         </div>
-        <p>Painel de Controle de Robótica em Tempo Real</p>
+        <p>Painel de Controle de Robótica & Análise Climática</p>
     </header>
 
     <main>
 
+        <!-- PAINEL DOS SENSORES -->
         <section class="painel">
 
             <div class="card card-temp">
@@ -58,6 +61,7 @@
 
         </section>
 
+        <!-- SITUAÇÃO DO AMBIENTE -->
         <section class="status">
             <h2>SITUAÇÃO DO AMBIENTE</h2>
             <p id="situacao">Aguardando leitura...</p>
@@ -71,15 +75,44 @@
             </button>
         </section>
 
+        <!-- NOVA SEÇÃO: IMPACTO DO EL NIÑO -->
+        <section class="elnino-section">
+            <div class="elnino-header">
+                <h2>🌍 Fenômeno El Niño & Impactos Climáticos</h2>
+                <span class="elnino-badge">ALERTA CLIMÁTICO</span>
+            </div>
+            
+            <div class="elnino-content">
+                <div class="elnino-text">
+                    <p>
+                        O <strong>El Niño</strong> é um fenômeno climático caracterizado pelo aquecimento anormal das águas do Oceano Pacífico Equatorial. 
+                        Ele altera drasticamente os padrões de chuva e temperatura em todo o planeta.
+                    </p>
+                    <p>
+                        <strong>Principais Impactos no Brasil:</strong>
+                    </p>
+                    <ul>
+                        <li>🔥 <strong>Norte e Nordeste:</strong> Sequeiras severas e temperaturas elevadas.</li>
+                        <li>⛈️ <strong>Sul:</strong> Aumento significativo das chuvas e risco de enchentes.</li>
+                        <li>🌡️ <strong>Centro-Oeste e Sudeste:</strong> Ondas de calor intenso e irregularidade de chuvas.</li>
+                    </ul>
+                </div>
+                
+                <div class="elnino-mapa">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/13457424964928609679" alt="Mapa do El Niño e impacto das temperaturas na América do Sul">
+                    <span class="mapa-caption">Regiões mais afetadas pelas anomalias do El Niño</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE O PROJETO -->
         <section class="sobre">
             <h2>SOBRE O PROJETO</h2>
             <p>
-                Este projeto utiliza robótica, programação e sensores
-                para realizar o monitoramento constante das condições ambientais.
+                Este projeto utiliza robótica, programação e sensores para realizar o monitoramento constante das condições ambientais.
             </p>
             <p>
-                O sistema coleta dados de temperatura, umidade do ar e luminosidade,
-                comunicação em tempo real entre hardware e interface web.
+                O sistema coleta dados de temperatura, umidade do ar e luminosidade, garantindo integração entre protótipo e interface web.
             </p>
         </section>
 
